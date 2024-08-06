@@ -1,0 +1,36 @@
+{
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "lorem-ipsum": "^2.0.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.2",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4"
+  },
+  "packageManager": "yarn@3.6.3+sha512.d432ab8b22b89cb8b46649ebaf196159b0c1870904224771d75fdf8b55490aaa5de4d9f028deb0425f1513bff7843e97b9d117103795a23b12d2e7c1cedcf50f"
+}
