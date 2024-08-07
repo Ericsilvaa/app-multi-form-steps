@@ -1,21 +1,23 @@
-import { useFormContext } from '../../../context/useFormContext'
+import { useFormContext } from '../../../hooks/useFormContext'
+import FormContainer from '../../containers/FormContainer'
+import ReviewAndConfirmation from '../../review/Review'
 import PersonalAddress from './PersonalAddress'
 import PersonalContactDetails from './PersonalContactDetails'
 import PersonalInformation from './PersonalInformation'
 import ProfessionInformation from './ProfessionInformation'
-import ReviewAndConfirmation from './Review'
 
 const FormSteps = () => {
-  const { currentStep } = useFormContext()
+  const { currentStep, data } = useFormContext()
 
   return (
-    <div className=''>
+    <FormContainer>
       {currentStep === 1 && <PersonalInformation />}
       {currentStep === 2 && <ProfessionInformation />}
       {currentStep === 3 && <PersonalAddress />}
       {currentStep === 4 && <PersonalContactDetails />}
       {currentStep === 5 && <ReviewAndConfirmation />}
-    </div>
+      {JSON.stringify(data)}
+    </FormContainer>
   )
 }
 
