@@ -1,0 +1,122 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "personalInformation": {
+        "fullName": "John Doe",
+        "birthDate": "1990-01-01",
+        "gender": "male",
+        "email": "john.doe@example.com"
+      },
+      "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "Anystate",
+        "postalCode": "12345",
+        "number": "100"
+      },
+      "contactDetails": {
+        "phoneNumber": "123-456-7890",
+        "alternatePhoneNumber": "098-765-4321",
+        "contactPreferences": "email"
+      },
+      "profession": {
+        "occupation": "Software Developer",
+        "companyName": "Tech Co",
+        "yearsOfExperience": "5",
+        "skills": ["JavaScript", "React", "Node.js"]
+      },
+      "registrations": [
+        {
+          "id": 1,
+          "date_registrations": "2024-08-01T10:00:00Z",
+          "date_initial": "2024-08-01T09:00:00Z",
+          "date_finished": "2024-08-01T10:00:00Z",
+          "conclusion": "Successful",
+          "isEdit": false,
+          "isEditing": false,
+          "employeeId": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "personalInformation": {
+        "fullName": "Jane Smith",
+        "birthDate": "1985-05-15",
+        "gender": "female",
+        "email": "jane.smith@example.com"
+      },
+      "address": {
+        "street": "456 Elm St",
+        "city": "Othertown",
+        "state": "Otherstate",
+        "postalCode": "67890",
+        "number": "200"
+      },
+      "contactDetails": {
+        "phoneNumber": "321-654-0987",
+        "alternatePhoneNumber": "789-012-3456",
+        "contactPreferences": "phone"
+      },
+      "profession": {
+        "occupation": "Project Manager",
+        "companyName": "Business Inc",
+        "yearsOfExperience": "10",
+        "skills": ["Project Management", "Agile", "Scrum"]
+      },
+      "registrations": [
+        {
+          "id": 2,
+          "date_registrations": "2024-08-02T11:00:00Z",
+          "date_initial": "2024-08-02T10:00:00Z",
+          "date_finished": "2024-08-02T11:00:00Z",
+          "conclusion": "Pending",
+          "isEdit": true,
+          "isEditing": true,
+          "employeeId": 2
+        }
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "role": "Administrator",
+      "email": "alice.johnson@example.com",
+      "phoneNumber": "555-1234"
+    },
+    {
+      "id": 2,
+      "name": "Bob Lee",
+      "role": "Data Entry Clerk",
+      "email": "bob.lee@example.com",
+      "phoneNumber": "555-5678"
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "employeeId": 1,
+      "date_registrations": "2024-08-01T10:00:00Z",
+      "date_initial": "2024-08-01T09:00:00Z",
+      "date_finished": "2024-08-01T10:00:00Z",
+      "conclusion": "Successful",
+      "isEdit": false,
+      "isEditing": false
+    },
+    {
+      "id": 2,
+      "clientId": 2,
+      "employeeId": 2,
+      "date_registrations": "2024-08-02T11:00:00Z",
+      "date_initial": "2024-08-02T10:00:00Z",
+      "date_finished": "2024-08-02T11:00:00Z",
+      "conclusion": "Pending",
+      "isEdit": true,
+      "isEditing": true
+    }
+  ]
+}
