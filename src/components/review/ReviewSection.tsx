@@ -1,25 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import { LABELMAPPING } from '../../constants/form'
-import { DataValuesType } from '../../types/TForm'
+import { useFormContext } from '../../hooks/useFormContext'
+import { DataValuesType, IDataForm } from '../../types/TForm'
 
 type Props = {
   title: string
+  fieldName: keyof IDataForm
   data: DataValuesType
-  onEdit: (field: string, value: any) => void
 }
 
-const ReviewSection: React.FC<Props> = ({ title, data, onEdit }) => {
+const ReviewSection: React.FC<Props> = ({ title, data, fieldName }) => {
+  const { editField } = useFormContext()
   const [editingField, setEditingField] = useState<string | null>(null)
   const [fieldValue, setFieldValue] = useState<any>('')
 
   const handleEditClick = (field: string, value: any) => {
+    console.log('🚀 ~ handleEditClick ~ value:', value)
+    console.log('🚀 ~ handleEditClick ~ field:', field)
     setEditingField(field)
     setFieldValue(value)
   }
 
   const handleSaveClick = (field: string) => {
-    onEdit(field, fieldValue)
+    console.log('🚀 ~ handleSaveClick ~ field:', field)
+    editField(fieldName, field, fieldValue)
     setEditingField(null)
   }
 

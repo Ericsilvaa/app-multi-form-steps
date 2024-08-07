@@ -27,6 +27,7 @@ export const ClientProvider = ({ children }: ClientProviderProps) => {
 
   const editField = React.useCallback(
     (section: keyof IDataForm, field: string, value: DataValuesType) => {
+      console.log('🚀 ~ ClientProvider ~ value:', value)
       setData((prevData) => ({
         ...prevData,
         [section]: {
@@ -49,17 +50,14 @@ export const ClientProvider = ({ children }: ClientProviderProps) => {
   //   }))
   // }
 
-  const contextValue = React.useMemo(
-    () => ({
-      data,
-      currentStep,
-      nextStep,
-      prevStep,
-      setFieldValue,
-      editField
-    }),
-    [currentStep, , setFieldValue]
-  )
+  const contextValue = {
+    data,
+    currentStep,
+    nextStep,
+    prevStep,
+    setFieldValue,
+    editField
+  }
 
   return (
     <ClientContext.Provider value={contextValue}>

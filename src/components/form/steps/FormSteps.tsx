@@ -8,7 +8,7 @@ import PersonalInformation from './PersonalInformation'
 import ProfessionInformation from './ProfessionInformation'
 
 const FormSteps = () => {
-  const { currentStep, data } = useFormContext()
+  const { currentStep } = useFormContext()
 
   return (
     <FormContainer>
@@ -18,7 +18,6 @@ const FormSteps = () => {
       {currentStep === 3 && <PersonalAddress />}
       {currentStep === 4 && <PersonalContactDetails />}
       {currentStep === 5 && <ReviewAndConfirmation />}
-      <pre className='mt-4'>{JSON.stringify(data, null, 2)}</pre>
     </FormContainer>
   )
 }

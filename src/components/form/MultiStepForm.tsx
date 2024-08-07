@@ -4,9 +4,7 @@ import FormSteps from './steps/FormSteps'
 const MultiStepForm = () => {
   return (
     <ClientProvider>
-      <div className=''>
-        <FormSteps />
-      </div>
+      <FormSteps />
     </ClientProvider>
   )
 }
