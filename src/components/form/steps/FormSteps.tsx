@@ -1,6 +1,7 @@
 import { useFormContext } from '../../../hooks/useFormContext'
 import FormContainer from '../../containers/FormContainer'
 import ReviewAndConfirmation from '../../review/Review'
+import ProgressBar from '../ProgressBar'
 import PersonalAddress from './PersonalAddress'
 import PersonalContactDetails from './PersonalContactDetails'
 import PersonalInformation from './PersonalInformation'
@@ -11,12 +12,13 @@ const FormSteps = () => {
 
   return (
     <FormContainer>
+      <ProgressBar />
       {currentStep === 1 && <PersonalInformation />}
       {currentStep === 2 && <ProfessionInformation />}
       {currentStep === 3 && <PersonalAddress />}
       {currentStep === 4 && <PersonalContactDetails />}
       {currentStep === 5 && <ReviewAndConfirmation />}
-      {JSON.stringify(data)}
+      <pre className='mt-4'>{JSON.stringify(data, null, 2)}</pre>
     </FormContainer>
   )
 }

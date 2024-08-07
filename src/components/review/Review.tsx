@@ -1,6 +1,6 @@
 import { useFormContext } from '../../hooks/useFormContext'
 import { DataValuesType } from '../../types/TForm'
-import NavigationButtons from '../button/NavigationButtons'
+import ButtonSubmit from '../button/ButtonSubmit'
 
 const ReviewAndConfirmation = () => {
   const { data: formData, setFieldValue } = useFormContext()
@@ -40,7 +40,7 @@ const ReviewAndConfirmation = () => {
           data={formData.contact_details}
           onEdit={(field, value) => handleEdit('contact_details', field, value)}
         /> */}
-        <NavigationButtons />
+        <ButtonSubmit title='Finalizar' />
       </div>
     </div>
   )

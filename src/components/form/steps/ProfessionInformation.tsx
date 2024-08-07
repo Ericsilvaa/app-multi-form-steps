@@ -1,13 +1,13 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useFormContext } from '../../../hooks/useFormContext'
 import { IDataForm } from '../../../types/TForm'
-import NavigationButtons from '../../button/NavigationButtons'
+import ButtonSubmit from '../../button/ButtonSubmit'
 import TextInput from '../../input/TextInput'
 
 type FormData = IDataForm['profession'] & { skills: string }
 
 const ProfessionInformation = () => {
-  const { setFieldValue, nextStep } = useFormContext()
+  const { setFieldValue, nextStep, prevStep } = useFormContext()
   const { register, handleSubmit } = useForm<FormData>()
 
   const onSubmit: SubmitHandler<FormData> = (formData) => {
@@ -26,11 +26,8 @@ const ProfessionInformation = () => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className='w-full max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg'
-    >
-      <div className='grid grid-cols-2 gap-4 mb-4'>
+    <form onSubmit={handleSubmit(onSubmit)} className='w-full p-6'>
+      <div className='flex flex-col gap-4'>
         <TextInput
           id='occupation'
           label='Occupation'
@@ -48,7 +45,16 @@ const ProfessionInformation = () => {
         />
         <TextInput id='skills' label='Skills' {...register('skills')} />
       </div>
-      <NavigationButtons />
+      <div className={`flex justify-between`}>
+        <button
+          type='button'
+          onClick={prevStep}
+          className='py-2 px-4 bg-gray-500 text-white font-semibold rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
+        >
+          Anterior
+        </button>
+        <ButtonSubmit />
+      </div>
     </form>
   )
 }
