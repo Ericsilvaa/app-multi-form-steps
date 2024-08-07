@@ -1,24 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {
-  AddresType,
-  ContactDetailsType,
-  PersonalInformation,
-  ProfessionType
-} from './TUser'
-
-export type DataForm = {
-  personal_information: PersonalInformation
-  profession_information: ProfessionType
-  address: AddresType
-  contact_details: ContactDetailsType
-}
+  IAddress,
+  IContactDetails,
+  IPersonalInformation,
+  IProfession
+} from './IClient'
 
 export type DataValuesType =
-  | PersonalInformation
-  | AddresType
-  | ContactDetailsType
-  | ProfessionType
+  | IPersonalInformation
+  | IAddress
+  | IContactDetails
+  | IProfession
+
+export type IDataForm = {
+  personal_information: IPersonalInformation
+  address: IAddress
+  contact_details: IContactDetails
+  profession: IProfession
+}
 
 export interface ILabelsFormKeys {
   fullName: string
@@ -39,7 +37,7 @@ export interface ILabelsFormKeys {
   number: string
 }
 
-// enums
+// Definindo os passos do formulário como enum
 export enum Steps {
   PERSONAL_INFORMATION = 1,
   ADDRESS = 2,
