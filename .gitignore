@@ -32,3 +32,4 @@ dist-ssr
 !.vscode/extensions.json
 *.gz
 .yarn/cache/*
+yarn.lock
